@@ -1,0 +1,26 @@
+
+
+html, body {
+   min-height: 100%;
+}
+
+body {
+    background: #F5F5F5!important;
+}
+
+.content-container {
+    min-height: 100%;
+}
+
+.login-container {
+    width: 600px;
+}
+
+.login-button {
+    margin-bottom: 1.5rem!important;
+}
+
+.input-wide {
+    width: 290px;
+}
+
