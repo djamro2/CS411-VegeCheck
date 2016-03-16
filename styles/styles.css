@@ -4,10 +4,6 @@ html, body {
    min-height: 100%;
 }
 
-body {
-    background: #F5F5F5!important;
-}
-
 .content-container {
     min-height: 100%;
 }
@@ -22,5 +18,24 @@ body {
 
 .input-wide {
     width: 290px;
+}
+
+.manager-options {
+    width: 100%;
+}
+
+.manager-action {
+    width: 130px;
+    height: 130px;
+    border-radius: 5px;
+    border: 1px solid lightgrey;
+    cursor: pointer;
+    text-align: center;
+    padding-top: .3em;
+}
+
+.manager-action-img {
+    width: 80px;
+    height: 80px;
 }
 

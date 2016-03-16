@@ -23,7 +23,7 @@
     <title>VegeCheck</title>
 </head>
 
-<body ng-app="VegeCheck" style="background: #F5F5F5!important;">
+<body ng-app="VegeCheck">
 
     <div class="content-container" layout="row" layout-align="center center">
 
@@ -33,26 +33,11 @@
                         layout-align="start center"
                         layout-padding>
                 
-                <h2>VegeCheck</h2>
+                <h2>Manager Dashboard</h2>
 
-                <form action="submit_login.php" 
-                      method="post"
-                      flex layout="column"
-                      layout-align="start center">
+                <div class="manager-options">
 
-                    <md-input-container class="input-wide">
-                        <label>username</label>
-                        <input type="text" name="username">
-                    </md-input-container>
-
-                    <md-input-container class="input-wide">
-                        <label>password</label>
-                        <input type="text" name="password">
-                    </md-input-container>
-                        
-                    <md-button type="submit" class="md-raised md-primary login-button">Login</md-button>
-
-                </form>
+                </div>
 
             </md-content>
         </div>
