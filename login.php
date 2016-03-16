@@ -47,7 +47,7 @@
 
                     <md-input-container class="input-wide">
                         <label>password</label>
-                        <input type="text" name="password">
+                        <input type="password" name="password">
                     </md-input-container>
                         
                     <md-button type="submit" class="md-raised md-primary login-button">Login</md-button>

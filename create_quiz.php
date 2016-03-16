@@ -25,7 +25,7 @@
 
 <body ng-app="VegeCheck">
     
-    <p>This is the quiz overview page</p>
+    <p>This is page to create quizes</p>
 
 </body>
 
