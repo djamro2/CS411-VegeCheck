@@ -17,11 +17,27 @@
 		
         <?php
             
-            $answer1 = $_POST['question-1-answers'];
-            $answer2 = $_POST['question-2-answers'];
-            $answer3 = $_POST['question-3-answers'];
-            $answer4 = $_POST['question-4-answers'];
-            $answer5 = $_POST['question-5-answers'];
+            $answer1 = isset($_POST['question-1-answers']) ? $_POST['question-1-answers']: '';
+            if (empty($answer1)){
+            	echo "You didn't select an answer for question 1<br/>";
+            }
+            $answer2 = isset($_POST['question-2-answers']) ? $_POST['question-2-answers']: '';
+            if (empty($answer2)){
+            	echo "You didn't select an answer for question 2<br/>";
+            }
+            $answer3 = isset($_POST['question-3-answers']) ? $_POST['question-3-answers']: '';
+            if (empty($answer3)){
+            	echo "You didn't select an answer for question 3<br/>";
+            }
+            $answer4 = isset($_POST['question-4-answers']) ? $_POST['question-4-answers']: '';
+            if (empty($answer4)){
+            	echo "You didn't select an answer for question 4<br/>";
+            }
+            $answer5 = isset($_POST['question-5-answers']) ? $_POST['question-5-answers']: '';
+            if (empty($answer5)){
+            	echo "You didn't select an answer for question 5<br/>";
+            }
+
         
             $totalCorrect = 0;
             
