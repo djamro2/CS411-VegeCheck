@@ -1,5 +1,9 @@
 
+# vim temp files
 *.swp
+
+# phpstorm temp files
+.idea/vcs.xml
 
 # Ignore Dreamweaver sync files
 _notes/
