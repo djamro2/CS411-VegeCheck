@@ -18,7 +18,7 @@
     <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.js"></script>
     
     <!-- Angular Code -->
-    <script type="text/javascript" src="/scripts/app.js"></script>
+    <script type="text/javascript" src="scripts/app.js"></script>
 
     <title>VegeCheck</title>
 </head>

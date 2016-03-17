@@ -1,8 +1,9 @@
 
-<?php
+<script type="text/javascript">
+    window.location.href = 'login.php';
+</script>
 
-header("Location: /login.php");
-die();
+<?php
 
 ?>
 
