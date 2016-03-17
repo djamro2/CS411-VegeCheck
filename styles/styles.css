@@ -118,3 +118,8 @@ fieldset {
     background: none;
     border: none;
 }
+
+.login-error {
+    color: orangered;
+    text-align: center;
+}

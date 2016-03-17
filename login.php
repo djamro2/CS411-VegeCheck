@@ -1,6 +1,6 @@
 
 <!DOCTYPE html>
-<html>
+<html ng-app="VegeCheck">
 
 <head>
 
@@ -19,11 +19,12 @@
     
     <!-- Angular Code -->
     <script type="text/javascript" src="scripts/app.js"></script>
+    <script type="text/javascript" src="scripts/AddPluCtrl.js"></script>
 
     <title>VegeCheck</title>
 </head>
 
-<body ng-app="VegeCheck" style="background: #F5F5F5!important;">
+<body ng-controller="AddPluController" style="background: #F5F5F5!important;">
 
     <div class="content-container" layout="row" layout-align="center center">
 
@@ -51,6 +52,8 @@
                     </md-input-container>
                         
                     <md-button type="submit" class="md-raised md-primary login-button">Login</md-button>
+
+                    <p ng-if="getParam('loginFailed')" class="login-error">Incorrect username or password</p>
 
                 </form>
 
