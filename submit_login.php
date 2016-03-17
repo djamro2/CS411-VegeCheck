@@ -2,6 +2,9 @@
 <?php
 
 	require("util/database.php");
+	
+	$username = $_POST["username"];
+	$password = $_POST["password"];
 
 	$query = sprintf("SELECT * FROM manager WHERE username='%s' AND password=PASSWORD('%s')", mysql_real_escape_string($username), mysql_real_escape_string($password));
 	$result = mysql_query($query);

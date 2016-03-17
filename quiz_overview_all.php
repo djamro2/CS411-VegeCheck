@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html ng-app="VegeCheck">
 
@@ -18,7 +17,7 @@
     <!-- Angular Material Library -->
     <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.js"></script
 
-    <!-- Angular Code -->
+    ><!-- Angular Code -->
     <script type="text/javascript" src="scripts/app.js"></script>
     <script type="text/javascript" src="scripts/vegecheck-navbar.js"></script>
     <script type="text/javascript" src="scripts/AddPluCtrl.js"></script>
@@ -142,10 +141,9 @@
 
     </div>
 
-</div>
-
 </body>
 
 </html>
 
 
+				
