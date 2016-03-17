@@ -1,3 +1,8 @@
 
 *.swp
 
+# Ignore Dreamweaver sync files
+_notes/
+
+# Ignore password file
+util/password.php

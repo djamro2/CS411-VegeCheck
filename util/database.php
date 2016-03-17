@@ -1,7 +1,7 @@
 <?php
 $host = "mysql4.000webhost.com";
 	$user = "a6322361_user";
-	$pass = "****";
+	require_once("password.php");
 	$dbname = "a6322361_data";
 	
 	$username = $_POST["username"];
