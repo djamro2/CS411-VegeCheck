@@ -42,7 +42,7 @@
 
                 <form name="addPluForm" 
                       class="addPluForm"
-                      method="POST" action="/submit_plu.php" enctype="multipart/form-data">
+                      method="post" action="submit_plu.php" enctype="multipart/form-data">
 
                 <fieldset layout="column" layout-align="none center">
 
@@ -50,12 +50,12 @@
 
                 <md-input-container class="pluItem-input">
                     <label>Title </label>
-                    <input name="title" ng-model="pluItem.title">
+                    <input name="pluTitle" ng-model="pluItem.title">
                 </md-input-container>
                 
                 <md-input-container class="pluItem-input">
                     <label>Code</label>
-                    <input name="code" ng-model="pluItem.code">
+                    <input name="pluCode" ng-model="pluItem.code">
                 </md-input-container>
 
                 <div class="input-file-row" layout="row" layout-align="start center" button-as-input>

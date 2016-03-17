@@ -33,7 +33,7 @@
                         layout-align="start center"
                         layout-padding>
                 
-                <h2>VegeCheck</h2>
+                <h2>Manager Login</h2>
 
                 <form action="submit_login.php" 
                       method="post"
