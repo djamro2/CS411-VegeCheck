@@ -1,3 +1,0 @@
-<?php
-$pass = "lemonade3";
-?>
