@@ -53,7 +53,7 @@
                         
                     <md-button type="submit" class="md-raised md-primary login-button">Login</md-button>
 
-                    <p ng-if="getParam('loginFailed')" class="login-error">Incorrect username or password</p>
+                    <p ng-if="getParam('loginFail')" class="login-error">Incorrect username or password</p>
 
                 </form>
 
