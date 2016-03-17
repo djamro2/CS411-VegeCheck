@@ -123,3 +123,11 @@ fieldset {
     color: orangered;
     text-align: center;
 }
+
+.title-link {
+    text-decoration: none;
+}
+
+.quiz-title {
+    color: black;
+}
