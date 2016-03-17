@@ -45,6 +45,9 @@
 
                     <fieldset layout="column" layout-align="none center">
 
+                        <!-- hidden input, contains quiz Id -->
+                        <input ng-if="getParam('quizId')" hide-gt-xs name="quizID" value="{{getParam('quizId')}}" />
+
                         <div class="addplu-input-group">
 
                             <md-input-container class="pluItem-input">
@@ -84,12 +87,6 @@
                                        type="submit">Create</md-button>
                         </div>
 
-                        <div layout="row" layout-align="center center">
-                            <p ng-if="errorMessage && !successMessage" class="bottom-message red">{{errorMessage}}</p>
-                            <p ng-if="successImageId && !errorMessage" class="bottom-message">
-                                <span>Success! Item uploaded</span>
-                            </p>
-                        </div>
 
                     </fieldset>
 
