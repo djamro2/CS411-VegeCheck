@@ -31,7 +31,7 @@
         
         <form action="score.php" method="post" id="quiz">
         
-            <ol>
+            <ul>
             
                 <li>
                 
@@ -60,7 +60,7 @@
                         <label for="question-1-answers-D">D) 98423 </label>
                     </div>
                 
-                </li>
+                </li><br/>
                 
                 <li>
 
@@ -89,7 +89,7 @@
                         <label for="question-2-answers-D">D) 2003</label>
                     </div>
                 
-                </li>
+                </li><br/>
                 
                 <li>
                 
@@ -118,7 +118,7 @@
                         <label for="question-3-answers-D">D) 1003</label>
                     </div>
                 
-                </li>
+                </li><br/>
                 
                 <li>
                 
@@ -146,7 +146,7 @@
                         <label for="question-4-answers-D">D) 92323</label>
                     </div>
                 
-                </li>
+                </li><br/>
                 
                 <li>
                 
@@ -174,9 +174,9 @@
                         <label for="question-5-answers-D">D) 56453</label>
                     </div>
                 
-                </li>
+                </li><br/>
             
-            </ol>
+            </ul>
             
             <input type="submit" value="Submit Quiz" />
         
