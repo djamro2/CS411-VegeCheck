@@ -8,19 +8,22 @@ require("util/database.php");
 $quizTitle = $_POST["quizTitle"];
 $quizTries  = $_POST["quizTries"];
 $quizDueDate = $_POST["quizDueDate"];
+$quizID = $_POST["quizID"];
 
 session_start();
 $managerID = $_SESSION["managerID"];
-echo "Hey";
-echo "<br />";
-echo $quizDueDate;
-echo "<br />";
-echo date('Y-m-d H:i:s', strtotime($quizDueDate));
+$date = date('Y-m-d H:i:s', strtotime($quizDueDate));
 
 //Insert the image name and image content in image_table
-$insert_image=sprintf("INSERT INTO quiz(managerID, name, dueDate, numTries) 
-                           VALUES('%d', '%s', '%s', '%d')", $managerID, mysql_real_escape_string($quizTitle), date('Y-m-d H:i:s', strtotime($quizDueDate)), $quizTries);
+if(isset($_POST["quizID"])) {
+	$query = sprintf("UPDATE quiz SET managerID='%d', name='%s', dueDate='%s', numTries='%d' WHERE quizID='%d';", $managerID, mysql_real_escape_string($quizTitle), $date, $quizTries, $quizID);
+} else {
+	$query=sprintf("INSERT INTO quiz(managerID, name, dueDate, numTries) 
+                           VALUES('%d', '%s', '%s', '%d')", $managerID, mysql_real_escape_string($quizTitle), $date, $quizTries);
+}
 
-mysql_query($insert_image);
+mysql_query($query);
+header( 'Location: manager_dashboard.php' ) ;
+exit();
 
 ?>

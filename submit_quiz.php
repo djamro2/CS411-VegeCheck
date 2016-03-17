@@ -19,6 +19,7 @@ $insert_image=sprintf("INSERT INTO plu(pluID, title, managerID, image)
                            VALUES('%d', '%s', '%d', '%s')", $pluCode, mysql_real_escape_string($pluTitle), $managerID, $imagetmp);
 
 mysql_query($insert_image);
-
+header( 'Location: manager_dashboard.php' ) ;
+exit();
 ?>
 
