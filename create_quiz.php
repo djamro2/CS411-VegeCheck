@@ -41,7 +41,7 @@
 
                 <form name="addPluForm"
                       class="addPluForm"
-                      method="post" action="submit_quiz.php" enctype="multipart/form-data">
+                      method="post" action="submit_create_quiz.php" enctype="multipart/form-data">
 
                     <fieldset layout="column" layout-align="none center">
 
@@ -57,7 +57,9 @@
                                 <input name="quizTries" ng-model="pluItem.code">
                             </md-input-container>
 
-                            <md-datepicker name="quizDueDate" ng-model="dueDate" md-placeholder="Due Date"></md-datepicker>
+                            <md-datepicker name="quizDueDate" ng-model="dueDate" md-placeholder="Due Date">
+                            <input name="quizDueDate" ng-model="pluItem.dueDate">
+                            </md-datepicker>
 
                             <br/>
                             <p style="padding-top: 1.25rem;">Select PLU Items</p>

@@ -3,7 +3,7 @@
 *.swp
 
 # phpstorm temp files
-.idea/vcs.xml
+.idea/
 
 # Ignore Dreamweaver sync files
 _notes/
