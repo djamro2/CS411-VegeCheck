@@ -93,3 +93,28 @@ fieldset {
 #addPluButton {
     margin-top: 2.5rem;
 }
+
+.addplu-wrapper {
+    padding-bottom: 2rem;
+}
+
+.quiz-overview-content {
+    min-width: 620px;
+}
+
+.quiz-list {
+    width: 80%;
+}
+
+.material-icons {
+    cursor: pointer;
+}
+
+.settings-icon {
+    padding-right: .5rem;
+}
+
+.delete-button {
+    background: none;
+    border: none;
+}

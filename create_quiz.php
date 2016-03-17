@@ -41,7 +41,7 @@
 
                 <form name="addPluForm"
                       class="addPluForm"
-                      method="post" action="submit_plu.php" enctype="multipart/form-data">
+                      method="post" action="submit_quiz.php" enctype="multipart/form-data">
 
                     <fieldset layout="column" layout-align="none center">
 

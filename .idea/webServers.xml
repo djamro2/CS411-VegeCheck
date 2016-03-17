@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="6cb031e7-43ab-4740-b6dd-43596ee61268" name="000webhost" url="http://vegechecl.net23.net">
+        <fileTransfer host="vegechecl.net23.net" port="21" rootFolder="/public_html/" username="a6322361">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
