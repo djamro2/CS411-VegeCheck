@@ -23,7 +23,6 @@
 </head>
 
 <body ng-app="VegeCheck">
-<body>
 
     <div id="page-wrap">
 
@@ -33,9 +32,31 @@
         
             <ul>
             
-                <li>
+                <!--<li>-->
+                	<label for="employeeID">EmployeeID</label><br />
+                	<input type="text" name="employeeID" /><br/>
+                    <label for="storeID">StoreID</label><br />
+                	<input type="text" name="storeID" /><br />
+                    
+                	<?php
+						require_once("util/database.php");
+						// TODO: get number from quiz parameters
+						$query = "SELECT * FROM plu ORDER BY RAND() LIMIT 5";
+						$result = mysql_query($query);
+						$i = 0;
+						while($row = mysql_fetch_assoc($result)) {
+							echo "<li>";
+							echo "<h3>Question " . ($i + 1) . "</h3>";
+							$i++;
+							echo "<img src=\"" . $row["image_url"] . "\" alt=\"Image cannot be displayed\" style=\"width:300px;height:300px;\">";
+							echo "<p>" . $row["title"] . "</p>";
+							echo "<input type=\"text\" name=\"response[]\" />";
+							echo "<input type=\"hidden\" name=\"answer[]\" value=\"" . $row["pluID"] . "\"/>";
+							echo "</li>";
+						}
+					?>
                 
-                    <h3>Question 1</h3>
+                    <!--<h3>Question 1</h3>
 
                     <div>
                     <img src="http://media.mercola.com/assets/images/food-facts/carrot-fb.jpg" alt="Image cannot be displayed" style="width:100%;height:100%;">
@@ -174,7 +195,7 @@
                         <label for="question-5-answers-D">D) 56453</label>
                     </div>
                 
-                </li><br/>
+                </li><br/>-->
             
             </ul>
             
@@ -183,18 +204,6 @@
         </form>
     
     </div>
-    
-    <script type="text/javascript">
-    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-    </script>
-    <script type="text/javascript">
-    var pageTracker = _gat._getTracker("UA-68528-29");
-    pageTracker._initData();
-    pageTracker._trackPageview();
-    </script>
-
-</body>
 
 </body>
 

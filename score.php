@@ -16,54 +16,41 @@
 		<h1>PLU QUIZ RESULT</h1>
 		
         <?php
-            
-            $answer1 = isset($_POST['question-1-answers']) ? $_POST['question-1-answers']: '';
-            if (empty($answer1)){
-            	echo "You didn't select an answer for question 1<br/>";
-            }
-            $answer2 = isset($_POST['question-2-answers']) ? $_POST['question-2-answers']: '';
-            if (empty($answer2)){
-            	echo "You didn't select an answer for question 2<br/>";
-            }
-            $answer3 = isset($_POST['question-3-answers']) ? $_POST['question-3-answers']: '';
-            if (empty($answer3)){
-            	echo "You didn't select an answer for question 3<br/>";
-            }
-            $answer4 = isset($_POST['question-4-answers']) ? $_POST['question-4-answers']: '';
-            if (empty($answer4)){
-            	echo "You didn't select an answer for question 4<br/>";
-            }
-            $answer5 = isset($_POST['question-5-answers']) ? $_POST['question-5-answers']: '';
-            if (empty($answer5)){
-            	echo "You didn't select an answer for question 5<br/>";
-            }
-
-        
-            $totalCorrect = 0;
-            
-            if ($answer1 == "A") { $totalCorrect++; }
-            if ($answer2 == "A") { $totalCorrect++; }
-            if ($answer3 == "C") { $totalCorrect++; }
-            if ($answer4 == "D") { $totalCorrect++; }
-            if ($answer5) { $totalCorrect++; }
-            
-            $percentage = ($totalCorrect/5)*100;
-            echo "You received (", $percentage, "%)<br/>";
+			require_once("util/database.php");
+            $responses = $_POST['response'];
+			$answers = $_POST['answer'];
+			$i = 0;
+			$result = "";
+			foreach( $responses as $resp ) {
+				$resp = trim($resp);
+				$ans = $answers[$i];
+				$result .= $ans . ":";
+				if($resp == $ans) {
+					$totalCorrect++;
+					$result .= "1";
+				} else {
+					$result .= "0";
+					if ($resp != "0" && empty($resp)){
+            			echo "You didn't select an answer for question " . ($i + 1) . "<br/>";
+            		} else if (!ctype_digit($resp)) {
+						echo "Invalid response for question " . ($i + 1) . "<br />";
+					} else {
+						echo "Wrong answer for question " . ($i + 1) . "<br />";
+					}
+				}
+				$result .= ",";
+				$i++;
+			}
+			trim($result, ",");
+            $percentage = ($totalCorrect / $i);
+            echo "You received (", ($percentage * 100), "%)<br/>";
             echo "You got $totalCorrect out of 5 questions correct";
-            
+            $query = sprintf("INSERT INTO score(storeID, employeeID, percentage, timeFinished, result) 
+                           VALUES('%d', '%d', '%f', now(), '%s')", $_POST['storeID'], $_POST['employeeID'], $percentage, mysql_real_escape_string($result));
+			mysql_query($query);
         ?>
 	
 	</div>
-	
-	<script type="text/javascript">
-	var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-	document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-	</script>
-	<script type="text/javascript">
-	var pageTracker = _gat._getTracker("UA-68528-29");
-	pageTracker._initData();
-	pageTracker._trackPageview();
-	</script>
 
 </body>
 
