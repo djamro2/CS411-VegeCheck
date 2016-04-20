@@ -1,7 +1,7 @@
 
 <?php
 
-	require("util/database.php");
+	require_once("util/database.php");
 	
 	$username = $_POST["username"];
 	$password = $_POST["password"];

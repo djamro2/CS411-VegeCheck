@@ -1,6 +1,6 @@
 <?php
 // include "quiz_overview_code.php"
-	require("util/database.php");
+	require_once("util/database.php");
 	$query = sprintf("SELECT * FROM quiz");
 	$result = mysql_query($query);
 	

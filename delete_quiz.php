@@ -2,7 +2,7 @@
 <?php
 
 // used to login to the database
-require("util/database.php");
+require_once("util/database.php");
 
 // attributes for this item
 $quizId = $_POST["quizId"];
