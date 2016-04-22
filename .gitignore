@@ -10,3 +10,6 @@ _notes/
 
 # Ignore password file
 util/password.php
+
+# to do list
+todo.txt

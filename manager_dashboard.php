@@ -52,11 +52,11 @@
                         <p>Create Quiz</p>
                     </div>
             
-                    <div class="manager-action" ng-click="goTo('/add_plu_item.php')">
+                    <div class="manager-action" ng-click="goTo('/quiz_score_review.php')">
                         <div flex>
                             <img class="manager-action-img" ng-src="http://www.gourmetegypt.com/media/catalog/product/p/e/pear-imported-united_1.jpg" />
                         </div>
-                        <p>Add PLU Item</p>
+                        <p>Quiz Results</p>
                     </div>
 
                 </div>

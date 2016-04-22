@@ -2,8 +2,8 @@
 	margin: 0; 
 	padding: 0; 
 }
-body { 
-	font: 14px Georgia, serif; 
+body {
+	font-family: 'Quicksand', sans-serif;
 }
 
 #page-wrap { 
@@ -12,8 +12,8 @@ body {
 }
 
 h1 { 
-	margin: 25px 0; 
-	font: 14px Georgia, Serif; 
+	margin: 25px 0;
+	font-family: 'Quicksand', sans-serif;
 	text-transform: uppercase; 
 	letter-spacing: 3px; 
 }

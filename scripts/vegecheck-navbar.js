@@ -1,13 +1,18 @@
 
 'use strict';
 
-app.directive('vegecheckNavbar', function($sce){
-	return {
-	    restrict: 'AE',
-        templateUrl: $sce.trustAsResourceUrl('http://web.engr.illinois.edu/~djamro2/vegecheckNavbar.html'),
-		replace: 'true',
-        link: function(scope, element, attrs) {
+app.directive('vegecheckNavbar', function(){
 
+	return {
+
+	    restrict: 'AE',
+        templateUrl: '/scripts/vegecheckNavbar.html',
+		replace: 'true',
+
+        link: function(scope, element, attrs) {
+            /* handle navbar logic */
         }
+
     };
+
 });

@@ -3,11 +3,11 @@
 
 <head>
 
-    <!-- styles --> 
+    <!-- styles -->
     <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="styles/styles.css" rel="stylesheet" />
-    
+
     <!-- Angular Libraries -->
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js"></script>
@@ -22,7 +22,8 @@
     <script type="text/javascript" src="/scripts/vegecheck-navbar.js"></script>
     <script type="text/javascript" src="/scripts/AddPluCtrl.js"></script>
 
-    <title>VegeCheck</title>
+    <title>Quiz Overview</title>
+
 </head>
 
 <body ng-controller="AddPluController">
@@ -35,14 +36,14 @@
 
         <md-content layout-align="center center" layout-padding class="md-whiteframe-8dp component-content quiz-overview-content">
 
-            <h2 class="addplu-text">View All Quizzes</h2>
+            <h2 class="addplu-text">Latest Quiz Scores</h2>
 
             <div layout="column" layout-align="center center" class="component-wrapper">
 
                 <!-- current quizzes -->
                 <md-list class="quiz-list md-white-frame-2dp">
                     <md-subheader class="md-no-sticky">Current Quizzes</md-subheader>
-					<?php include "quiz_overview_code.php" ?>
+                    <?php include "quiz_overview_code.php" ?>
 
                 </md-list>
 
@@ -71,7 +72,7 @@
                         <form method="POST" action="delete_quiz.php">
                             <input hide-gt-xs name="quizId" value="1" />
                             <button type=""submit" class="delete-button">
-                                <i class="material-icons">delete</i>
+                            <i class="material-icons">delete</i>
                             </button>
                         </form>
                     </md-list-item>
@@ -101,12 +102,9 @@
         </md-content>
 
     </div>
-    
+
 </div>
 
 </body>
 
 </html>
-
-
-				

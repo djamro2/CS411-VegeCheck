@@ -50,34 +50,57 @@
 
                         <div class="addplu-input-group">
 
-                            <md-input-container class="pluItem-input">
-                                <label>Title </label>
-                                <input name="quizTitle" ng-model="quiz.title">
-                            </md-input-container>
+                            <div class="center-text">
 
-                            <md-input-container class="pluItem-input">
-                                <label>Number of Tries</label>
-                                <input name="quizTries" ng-model="pluItem.code">
-                            </md-input-container>
+                                <md-input-container class="pluItem-input">
+                                    <label>Title </label>
+                                    <input name="quizTitle" ng-model="quiz.title">
+                                </md-input-container>
 
-                            <md-datepicker name="quizDueDate" ng-model="dueDate" md-placeholder="Due Date">
-                            <input name="quizDueDate" ng-model="pluItem.dueDate">
-                            </md-datepicker>
+                                <md-input-container class="pluItem-input">
+                                    <label>Number of Tries</label>
+                                    <input name="quizTries" ng-model="pluItem.code">
+                                </md-input-container>
 
-                            <br/>
-                            <p style="padding-top: 1.25rem;">Select PLU Items</p>
+                                <md-datepicker name="quizDueDate" ng-model="dueDate" md-placeholder="Due Date">
+                                <input name="quizDueDate" ng-model="pluItem.dueDate">
+                                </md-datepicker>
 
-                            <md-checkbox name="apple" aria-label="Checkbox 1">
-                                Apple
-                            </md-checkbox> <br/>
+                                <div class="line"></div>
 
-                            <md-checkbox name="pear" aria-label="Checkbox 1">
-                                Pear
-                            </md-checkbox> <br/>
+                                <p class="select-plu-text">
+                                    Select PLU Items to Quiz
+                                </p>
 
-                            <md-checkbox name="banana" aria-label="Checkbox 1">
-                                Banana
-                            </md-checkbox>
+                            </div>
+
+                            <md-checkbox ng-model="select_random_five" ng-click="select_manual = false">
+                                Select 5 random PLU items
+                            </md-checkbox> <br>
+
+                            <md-checkbox ng-model="select_manual" ng-click="select_random_five = false">
+                                Add PLU items manually
+                            </md-checkbox> <br>
+
+                            <div class="plu-item-list" ng-if="select_manual">
+
+                                <div class="plu-item" ng-repeat="pluItem in pluItems">
+                                    <md-input-container class="pluItem-input">
+                                        <label>PLU Item {{$index + 1}}</label>
+                                        <input ng-model="pluItem.code" ng-focus="addPluItem(pluItem)">
+                                    </md-input-container>
+                                </div>
+
+                            </div>
+                            
+<!--                            --><?php
+//								require_once("util/database.php");
+//								$query = "SELECT DISTINCT category FROM plu LIMIT 10";
+//								$result = mysql_query($query);
+//								while($row = mysql_fetch_assoc($result)) {
+//									echo "<md-checkbox name=\"cats\" value = \"" . $row["category"] . "\"aria-label=\"Checkbox 1\">" . $row["category"] . "</md-checkbox> <br/>";
+//								}
+//							?>
 
                         </div>
 

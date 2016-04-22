@@ -59,6 +59,7 @@ html, body {
     font-family: 'Quicksand', sans-serif;
     font-size: 1.2rem;
     font-weight: 700;
+    padding-left: 6px;
 }
 
 .footer {
@@ -79,7 +80,7 @@ fieldset {
 }
 
 .addplu-input-group {
-    max-width: 220px;
+    max-width: 350px;
 }
 
 .addplu-text {
@@ -114,6 +115,10 @@ fieldset {
     padding-right: .5rem;
 }
 
+.start-quiz-components {
+    margin-top: 4rem;
+}
+
 .delete-button {
     background: none;
     border: none;
@@ -130,4 +135,40 @@ fieldset {
 
 .quiz-title {
     color: black;
+}
+
+.quiz-question-list li {
+    list-style-type: none;
+}
+
+.quiz-card-content {
+    padding-bottom: 0;
+}
+
+.quiz-answer-input {
+    margin-bottom: 0;
+}
+
+.quiz-item {
+    padding-bottom: 2rem;
+}
+
+.center-text {
+    text-align: center;
+}
+
+.select-plu-text {
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+    font-weight: 700;
+}
+
+.quiz-submit-button {
+    text-align: center;
+    padding-bottom: 2rem;
+}
+
+.line {
+    margin-top: 1rem;
+    border-top: 1px solid lightgrey;
 }
