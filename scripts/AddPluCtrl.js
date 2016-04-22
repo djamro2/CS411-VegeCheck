@@ -1,5 +1,5 @@
 
-app.controller('AddPluController', ['$scope', '$window', function($scope, $window) {
+app.controller('AddPluController', ['$scope', '$window', '$http', function($scope, $window, $http) {
 
     var vm = this;
 
@@ -8,15 +8,10 @@ app.controller('AddPluController', ['$scope', '$window', function($scope, $windo
     $scope.select_manual = false;
 
     // plu items fro create_quiz
-    $scope.pluItems = [];
+    $scope.pluItems = [1,2,3,4,5];
 
-    // first plu item
-    $scope.pluItems.push({
-        code: '',
-        item_num: 0,
-        next_item: -1
-    });
-
+    // answers in the taking_quiz page
+    $scope.answers = [];
 
     /*
      * Called after controller is completely loaded
@@ -26,11 +21,32 @@ app.controller('AddPluController', ['$scope', '$window', function($scope, $windo
     };
 
     /*
+     * Given that a new answer, was given update that in the answers[] array or create a new item
+     */
+    $scope.addAnswer = function(given_answer, pluID) {
+
+        // first check to see if it already exists
+        for (var i = 0; i < $scope.answers.length; i++) {
+
+            if ($scope.answers[i].pluID === pluID) {
+                $scope.answers[i].given_answer = given_answer;
+                return;
+            }
+
+        }
+
+        // add new item
+        $scope.answers.push({
+            pluID: pluID,
+            given_answer: given_answer
+        });
+
+    };
+
+    /*
      * If the current input is focused on and the next one does not exist yet, add a new item to array
      */
     $scope.addPluItem = function(current_plu) {
-
-        console.log("focused on this element");
 
         if (current_plu.next_item === -1){
 
@@ -82,6 +98,28 @@ app.controller('AddPluController', ['$scope', '$window', function($scope, $windo
      */
     $scope.goTo = function(url) {
         $window.location.href = url;
+    };
+
+    /*
+     * Final function on the taking_quiz page, send the answers, employeeID, and storeID to the back end
+     */
+    $scope.submitAnswers = function() {
+
+        var request = $http({
+            method: "post",
+            url: "/score.php",
+            data: {
+                storeId: $scope.storeId,
+                employeeId: $scope.employeeId,
+                answers: $scope.answers
+            },
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
+        });
+
+        request.success(function(data){
+
+        });
+
     };
 
     vm.init();

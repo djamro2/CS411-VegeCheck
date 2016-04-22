@@ -21,6 +21,7 @@
     <script type="text/javascript" src="/scripts/app.js"></script>
     <script type="text/javascript" src="/scripts/vegecheck-navbar.js"></script>
     <script type="text/javascript" src="/scripts/AddPluCtrl.js"></script>
+    <script type="text/javascript" src="/scripts/Requests.js"></script>
 
     <title>VegeCheck Quiz</title>
 </head>
@@ -34,12 +35,20 @@
         <h1 class="center-text">PLU QUIZ</h1>
         
         <form action="score.php" method="post" id="quiz">
-        
+
+            <!-- init angular values from previous page-->
+            <?php
+                echo "<span ng-init=\"employeeId='" . $_POST["employeeId"] . "'; storeId='" . $_POST["storeId"] . "';\"></span>";
+            ?>
+
             <ul class="quiz-question-list">
 
                 <?php
 
                     require_once("util/database.php");
+
+                    echo "<input type='hidden' name='storeId' value='" . $_POST["storeId"] . "' />";
+                    echo "<input type='hidden' name='employeeId' value='" . $_POST["employeeId"] . "' />";
 
                     // TODO: get number from quiz parameters
                     $query = "SELECT * FROM plu ORDER BY RAND() LIMIT 5";
@@ -70,8 +79,9 @@
                         echo "<div layout=\"row\" layout-align=\"center center\">";
                         echo "<md-input-container class=\"pluItem-input quiz-answer-input\">";
                         echo "<label>Answer</label>";
-                        echo "<input name=\"answer\" ng-model=\"answer\">";
+                        echo "<input name='response[]' ng-model='answer" . $i . "' >";
                         echo "</md-input-container>";
+                        echo "<input type=\"hidden\" name=\"answer[]\" value=\"" . $row["pluID"] . "\"/>";
                         echo "</div>";
                         echo "</md-card-content>";
 

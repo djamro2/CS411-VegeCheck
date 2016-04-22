@@ -39,9 +39,7 @@
 
             <div layout="column" layout-align="center center" class="component-wrapper">
 
-                <form name="addPluForm"
-                      class="addPluForm"
-                      method="post" action="submit_create_quiz.php" enctype="multipart/form-data">
+                <form name="addPluForm" class="addPluForm" method="post" action="submit_create_quiz.php">
 
                     <fieldset layout="column" layout-align="none center">
 
@@ -74,33 +72,25 @@
 
                             </div>
 
-                            <md-checkbox ng-model="select_random_five" ng-click="select_manual = false">
-                                Select 5 random PLU items
-                            </md-checkbox> <br>
+                            <input type="checkbox" name="select_random_five" ng-model="select_random_five" ng-click="select_manual = false">
+                            <label>Select 5 random PLU items</label>
 
-                            <md-checkbox ng-model="select_manual" ng-click="select_random_five = false">
-                                Add PLU items manually
-                            </md-checkbox> <br>
+                            <br>
+                            <br>
+
+                            <input type="checkbox" name="select_manual" ng-model="select_manual" ng-click="select_random_five = false">
+                            <label>Add PLU items manually</label>
 
                             <div class="plu-item-list" ng-if="select_manual">
 
                                 <div class="plu-item" ng-repeat="pluItem in pluItems">
                                     <md-input-container class="pluItem-input">
-                                        <label>PLU Item {{$index + 1}}</label>
-                                        <input ng-model="pluItem.code" ng-focus="addPluItem(pluItem)">
+                                        <label>PLU Item {{pluItem}}</label>
+                                        <input name="plu_code[]">
                                     </md-input-container>
                                 </div>
 
                             </div>
-                            
-<!--                            --><?php
-//								require_once("util/database.php");
-//								$query = "SELECT DISTINCT category FROM plu LIMIT 10";
-//								$result = mysql_query($query);
-//								while($row = mysql_fetch_assoc($result)) {
-//									echo "<md-checkbox name=\"cats\" value = \"" . $row["category"] . "\"aria-label=\"Checkbox 1\">" . $row["category"] . "</md-checkbox> <br/>";
-//								}
-//							?>
 
                         </div>
 
