@@ -1,4 +1,10 @@
+
+<?php
+$quizId = $_GET["quizId"];
+?>
+
 <!DOCTYPE html>
+
 <html ng-app="VegeCheck">
 
 <head>
@@ -50,6 +56,11 @@
                         <label>Store ID</label>
                         <input name="storeId" ng-model="storeId">
                     </md-input-container>
+
+                    <!-- hidden input with the quizId-->
+                    <?php
+                        echo "<input type='hidden' name='quizId' value='" . $quizId . "'>";
+                    ?>
 
                     <div layout="row" layout-align="center center">
                         <md-button class="md-raised md-primary"

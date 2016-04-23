@@ -172,3 +172,7 @@ fieldset {
     margin-top: 1rem;
     border-top: 1px solid lightgrey;
 }
+
+.go-to-quiz-result > i{
+    cursor: pointer;
+}

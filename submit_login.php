@@ -13,6 +13,7 @@
 		session_start();
 		$_SESSION["managerUsername"] = mysql_result($result, 0, "username");
 		$_SESSION["managerID"] = mysql_result($result, 0, "managerID");
+		$_SESSION["loggedIn"] = true;
 		
         header("Location: /manager_dashboard.php");
         die();

@@ -13,6 +13,11 @@ app.controller('AddPluController', ['$scope', '$window', '$http', function($scop
     // answers in the taking_quiz page
     $scope.answers = [];
 
+    $scope.quizQuery = {
+        limit: 5,
+        page: 1
+    };
+
     /*
      * Called after controller is completely loaded
      */

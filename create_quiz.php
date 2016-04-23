@@ -50,21 +50,47 @@
 
                             <div class="center-text">
 
-                                <md-input-container class="pluItem-input">
-                                    <label>Title </label>
-                                    <input name="quizTitle" ng-model="quiz.title">
-                                </md-input-container>
+                                <?php
 
-                                <md-input-container class="pluItem-input">
-                                    <label>Number of Tries</label>
-                                    <input name="quizTries" ng-model="pluItem.code">
-                                </md-input-container>
+                                $quizId = $_GET["quizId"];
 
-                                <md-datepicker name="quizDueDate" ng-model="dueDate" md-placeholder="Due Date">
-                                <input name="quizDueDate" ng-model="pluItem.dueDate">
-                                </md-datepicker>
+                                if ($quizId && $quizId > -1) {
 
-                                <div class="line"></div>
+                                    // include "quiz_overview_code.php"
+                                    require_once("util/database.php");
+                                    $query = sprintf("SELECT * FROM quiz WHERE quizID = %s", $quizId);
+                                    $result = mysql_query($query);
+
+                                    while($row = mysql_fetch_assoc($result)) {
+
+                                        echo "<md-input-container class=\"pluItem-input\">";
+                                        echo "<label>Title </label>";
+                                        echo "<input name=\"quizTitle\" value='" . $row["name"] . "'>";
+                                        echo "</md-input-container>";
+
+                                    }
+
+                                } else {
+
+                                    echo "<md-input-container class=\"pluItem-input\">";
+                                    echo "<label>Title </label>";
+                                    echo "<input name=\"quizTitle\" ng-model=\"quizTitle\">";
+                                    echo "</md-input-container>";
+
+                                }
+
+                                ?>
+
+<!--                                <md-input-container class="pluItem-input">-->
+<!--                                    <label>Number of Tries</label>-->
+<!--                                    <input name="quizTries" ng-model="pluItem.code">-->
+<!--                                </md-input-container>-->
+<!---->
+<!--                                <md-datepicker name="quizDueDate" ng-model="dueDate" md-placeholder="Due Date">-->
+<!--                                <input name="quizDueDate" ng-model="pluItem.dueDate">-->
+<!--                                </md-datepicker>-->
+<!---->
+<!--                                <div class="line"></div>-->
 
                                 <p class="select-plu-text">
                                     Select PLU Items to Quiz
@@ -80,6 +106,8 @@
 
                             <input type="checkbox" name="select_manual" ng-model="select_manual" ng-click="select_random_five = false">
                             <label>Add PLU items manually</label>
+
+                            <br>
 
                             <div class="plu-item-list" ng-if="select_manual">
 

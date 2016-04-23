@@ -49,14 +49,23 @@
 
                     echo "<input type='hidden' name='storeId' value='" . $_POST["storeId"] . "' />";
                     echo "<input type='hidden' name='employeeId' value='" . $_POST["employeeId"] . "' />";
-
-                    // TODO: get number from quiz parameters
-                    $query = "SELECT * FROM plu ORDER BY RAND() LIMIT 5";
+					
+					$query = "SELECT * FROM plu ORDER BY RAND() LIMIT 5";
+					if(isset($_POST["quizId"])) {
+                    	$getQuery = sprintf("SELECT questions FROM quiz WHERE quizID='%s';", $_POST["quizId"]);
+                    	$result = mysql_query($getQuery);
+                    	$row = mysql_fetch_assoc($result);
+						if($row["questions"] != "") {
+							$query = sprintf("SELECT * FROM plu WHERE pluID IN (%s) ORDER BY RAND() LIMIT 5", $row["questions"]);
+						}
+					}
+					
                     $result = mysql_query($query);
-
                     $i = 0;
+					echo "<input type=\"hidden\" name=\"quizID\" value=\"" . $_POST["quizId"] . "\"\>";
+					echo "<input type=\"hidden\" name=\"storeID\" value=\"" . $_POST["storeId"] . "\"\>";
+					echo "<input type=\"hidden\" name=\"employeeID\" value=\"" . $_POST["employeeId"] . "\"\>";
                     while($row = mysql_fetch_assoc($result)) {
-
                         echo "<li class='quiz-item'>";
                         echo "<md-card>";
                         echo "<md-card-title>";

@@ -43,53 +43,6 @@
                 <md-list class="quiz-list md-white-frame-2dp">
                     <md-subheader class="md-no-sticky">Current Quizzes</md-subheader>
 					<?php include "quiz_overview_code.php" ?>
-
-                </md-list>
-
-                <!-- old quizzes -->
-                <md-list class="quiz-list md-white-frame-2dp">
-                    <md-subheader class="md-no-sticky">Expired Quizzes</md-subheader>
-
-                    <md-list-item layout="row" layout-align="none center">
-                        <span>Expired Quiz #1</span>
-                        <span flex></span>
-                        <i class="material-icons settings-icon" ng-click="goTo('create_quiz.php?quizId=1')">build</i>
-                        <form method="POST" action="delete_quiz.php">
-                            <input hide-gt-xs name="quizId" value="1" />
-                            <button class="delete-button">
-                                <i type="submit" class="material-icons">delete</i>
-                            </button>
-                        </form>
-                    </md-list-item>
-
-                    <md-divider></md-divider>
-
-                    <md-list-item layout="row" layout-align="none center">
-                        <span>Expired Quiz #1</span>
-                        <span flex></span>
-                        <i class="material-icons settings-icon" ng-click="goTo('create_quiz.php?quizId=1')">build</i>
-                        <form method="POST" action="delete_quiz.php">
-                            <input hide-gt-xs name="quizId" value="1" />
-                            <button type=""submit" class="delete-button">
-                                <i class="material-icons">delete</i>
-                            </button>
-                        </form>
-                    </md-list-item>
-
-                    <md-divider></md-divider>
-
-                    <md-list-item layout="row" layout-align="none center">
-                        <span>Expired Quiz #1</span>
-                        <span flex></span>
-                        <i class="material-icons settings-icon" ng-click="goTo('create_quiz.php?quizId=1')">build</i>
-                        <form method="POST" action="delete_quiz.php">
-                            <input hide-gt-xs name="quizId" value="1" />
-                            <button class="delete-button">
-                                <i type="submit" class="material-icons">delete</i>
-                            </button>
-                        </form>
-                    </md-list-item>
-
                 </md-list>
 
             </div>
